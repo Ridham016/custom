@@ -1,0 +1,18 @@
+ion-header {
+  ion-toolbar {
+    --background: #3880ff;
+    color: white;
+  }
+}
+ion-content {
+  ion-button {
+    --background: #3880ff;
+    --color: white;
+    margin-top: 20px;
+  }
+}
+ion-item {
+  --highlight-height: 0;
+  margin-bottom: 15px;
+  background-color: #fff;
+}

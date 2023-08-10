@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label  position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <app-remember-me formControlName="isRememberME" [(ngModel)]="isRememberME"></app-remember-me>
+    <div class="ion-padding">
+      <ion-button [disabled]="!loginForm.touched" type="submit" expand="full" [disabled]="loginForm.invalid">Login</ion-button>
+    </div>
+  </form>
+
+  <ion-button (click)="presentAlert()">Click Me</ion-button>
+ 
+
+
+  <pre> from FormControl {{loginForm.value | json}}</pre>
+  <pre> from ngModule {{isRememberME | json}}</pre>
+</ion-content>

@@ -1,0 +1,12 @@
+
+<ion-searchbar [debounce]="1000" (ionInput)="handleChange($event)"></ion-searchbar>
+
+<ion-list>
+  <ion-item>
+    <ion-checkbox slot="start" (ionChange)="selectAll($event)">SelectAll</ion-checkbox>
+  </ion-item>
+  <ion-item *ngFor="let result of results;let i=index;">
+    <ion-checkbox slot="start" [(ngModel)]="result.isChecked" (ionChange)="toogleChecked(result,i)"></ion-checkbox>
+    <ion-label>{{ result.name }}</ion-label>
+  </ion-item>
+</ion-list>

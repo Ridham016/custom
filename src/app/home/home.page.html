@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <div>
+    <app-custom-searchbar></app-custom-searchbar>
+    <ion-accordion-group>
+      <ion-accordion value={{item.id}} *ngFor="let item of data">
+        <ion-item slot="header">
+          <ion-label>
+            <ion-avatar>
+              <img alt="Silhouette of a person's head" src={{item.avatar}} />
+              {{item.first_name}}
+            </ion-avatar>
+          </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          id:{{item.id}}<br>
+          Email:{{item.email}}<br>
+          Last Name :{{item.last_name}}
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+
+    <ion-button (click)="loadMore()" [disabled]="disable" expand="block" fill="clear" shape="round">
+      load More Data
+    </ion-button>
+  </div>
+</ion-content>
