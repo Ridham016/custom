@@ -1,0 +1,15 @@
+<ion-item>
+  <ion-checkbox
+    [ngModel]="checked"
+    [indeterminate]="indeterminate"
+    (ngModelChange)="selectAllChange.emit($event)"
+  >
+  </ion-checkbox>
+  <ion-input
+    placeholder="Search"
+    clearInput
+    [ngModel]="searchText"
+    (ngModelChange)="searchChange.emit($event)"
+  >
+  </ion-input>
+</ion-item>

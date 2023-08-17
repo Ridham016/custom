@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { SelectAllPlusSearchComponent } from '../component/select-all-plus-search/select-all-plus-search.component';
+import { createCustomElement } from '@angular/elements';
+
 
 @Component({
   selector: 'app-home',
@@ -12,10 +15,18 @@ export class HomePage {
   pageNumber=1;
   data:any[]=[];
   disable:boolean=false;
+selectedValues: any;
 
   constructor(
-    private http:HttpClient
-  ) {}
+    private http:HttpClient,
+    private injector: Injector
+  ) {
+    const element = createCustomElement(SelectAllPlusSearchComponent, {
+      injector: this.injector,
+    });
+    customElements.define(`c-select-all-plus-search`, element);
+    console.log(element)
+  }
 
   ionViewDidEnter(){
     this.getData(this.pageNumber)

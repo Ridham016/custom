@@ -11,7 +11,17 @@
 
 
   <div>
-    <app-custom-searchbar></app-custom-searchbar>
+    <!-- <app-custom-searchbar></app-custom-searchbar> -->
+    <div>
+      <ion-item selectSearchAllDirective>
+        <ion-label>SelectAllDirective</ion-label>
+        <ion-select [(ngModel)]="selectedValues" multiple="true">
+          <ion-select-option [value]="option.id" *ngFor="let option of  data"
+            >{{option.first_name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
     <ion-accordion-group>
       <ion-accordion value={{item.id}} *ngFor="let item of data">
         <ion-item slot="header">
@@ -34,4 +44,7 @@
       load More Data
     </ion-button>
   </div>
+
+
+
 </ion-content>

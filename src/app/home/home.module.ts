@@ -6,6 +6,8 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CustomSearchbarComponent } from '../component/custom-searchbar/custom-searchbar.component';
+import { SelectAllPlusSearchComponent } from '../component/select-all-plus-search/select-all-plus-search.component';
+import { SelectAllSearchDirective } from '../component/select-all-plus-search/select-all-search-directive.directive';
 
 
 @NgModule({
@@ -13,8 +15,9 @@ import { CustomSearchbarComponent } from '../component/custom-searchbar/custom-s
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+
   ],
-  declarations: [HomePage,CustomSearchbarComponent]
+  declarations: [HomePage,CustomSearchbarComponent,SelectAllPlusSearchComponent,SelectAllSearchDirective]
 })
 export class HomePageModule {}
